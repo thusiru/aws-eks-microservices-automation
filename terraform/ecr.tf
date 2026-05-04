@@ -5,6 +5,7 @@ module "ecr_vote" {
   repository_name               = "vote-app"
   repository_force_delete       = true
   repository_image_scan_on_push = true
+  create_lifecycle_policy       = false
 }
 
 module "ecr_worker" {
@@ -14,6 +15,7 @@ module "ecr_worker" {
   repository_name               = "worker-app"
   repository_force_delete       = true
   repository_image_scan_on_push = true
+  create_lifecycle_policy       = false
 }
 
 module "ecr_result" {
@@ -23,4 +25,5 @@ module "ecr_result" {
   repository_name               = "result-app"
   repository_force_delete       = true
   repository_image_scan_on_push = true
+  create_lifecycle_policy       = false
 }
