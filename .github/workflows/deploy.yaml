@@ -49,9 +49,9 @@ jobs:
 
             - name: Inject ECR URLs into Manifests
               run: |
-                  sed -i "s|ECR_URL_PLACEHOLDER_VOTE|$VOTE_IMAGE|g" k8s/voting-app-deploy.yaml
-                  sed -i "s|ECR_URL_PLACEHOLDER_WORKER|$WORKER_IMAGE|g" k8s/worker-app-deploy.yaml
-                  sed -i "s|ECR_URL_PLACEHOLDER_RESULT|$RESULT_IMAGE|g" k8s/result-app-deploy.yaml
+                  sed -i "s|ECR_URL_PLACEHOLDER_VOTE|$VOTE_IMAGE|g" k8s/vote-deploy.yaml
+                  sed -i "s|ECR_URL_PLACEHOLDER_WORKER|$WORKER_IMAGE|g" k8s/worker-deploy.yaml
+                  sed -i "s|ECR_URL_PLACEHOLDER_RESULT|$RESULT_IMAGE|g" k8s/result-deploy.yaml
 
             - name: Deploy to EKS
               run: kubectl apply -f k8s/
